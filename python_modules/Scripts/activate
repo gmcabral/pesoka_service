@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\Gustavo\source\repos\PesokaService\python_modules"
+VIRTUAL_ENV="C:\Users\Gustavo\source\repos\pesoka_service\python_modules"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

@@ -1,12 +1,16 @@
 import requests
 from lxml import html
-from models import instrumento
+from models.instrumento import Instrumento
+from models.tipo_instrumento import TipoInstrumento
 
 class InstrumentoRepository:
     def __init__(self) -> None:
         pass
 
-    def get_instrumentos():
+    def get_lecer():
+        return 
+
+    def get_mercadopago():
         # URL de la página web
         url = 'https://www.bcra.gob.ar/PublicacionesEstadisticas/Principales_variables.asp'
 
@@ -20,11 +24,11 @@ class InstrumentoRepository:
             parsed_content = html.fromstring(content)
 
             # Obtenemos el título de la página web usando XPath
-            title = parsed_content.xpath('/html/body/div/div[2]/div/div/div/div/table/tbody/tr[10]/td[3]')[0]
+            value = parsed_content.xpath('/html/body/div/div[2]/div/div/div/div/table/tbody/tr[10]/td[3]')[0]
 
             # Imprimimos el título de la página web
-            print('El título de la página es:', title.text)
-            plazo_fijo = instrumento.Instrumento("Plazo Fijo", 0, title.text)
+            print('El título de la página es:', value.text)
+            plazo_fijo = Instrumento("Plazo Fijo", TipoInstrumento.PlazoFijo.value, value.text)
             json_data = plazo_fijo.to_json()
             return json_data
         

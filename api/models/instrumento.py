@@ -9,7 +9,7 @@ class Instrumento:
     def to_dict(self):
         return {
             "name": self.name,
-            "tipo": self.tipo,
+            "tipo":self.tipo,
             "valor": self.valor
         }
 

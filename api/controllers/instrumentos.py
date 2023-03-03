@@ -4,7 +4,7 @@ from repository.instrumento_repository import InstrumentoRepository
 
 @instrumentos_blueprint.route('/instrumentos/')
 def get_instrumentos():
-    return InstrumentoRepository.get_instrumentos()
+    return InstrumentoRepository.get_mercadopago()
 
 # @instrumentos_blueprint.route('/instrumentos/<string:coin_name>/<string:day>')
 # def get_fibo_limits(coin_name, day):
